@@ -1,30 +1,7 @@
-import { fechaISO, DIA_MS } from "./logica.js";
+const CLAVE_ALMACENAMIENTO = "organizador-tareas:v2";
 
-const CLAVE_ALMACENAMIENTO = "organizador-tareas:v1";
-
-function datosSemilla() {
-  const mas = (n) => fechaISO(new Date(Date.now() + n * DIA_MS));
-  const proyectos = [
-    {
-      id: "p1",
-      nombre: "Rediseño web",
-      tareas: [
-        { id: "t1", nombre: "Definir wireframes de home", fechaLimite: mas(1), prioridad: "alta", descripcion: "Estructura de secciones y jerarquía visual antes de pasar a diseño final.", estado: "progreso" },
-        { id: "t2", nombre: "Revisar copy de la página de precios", fechaLimite: mas(-1), prioridad: "media", descripcion: "", estado: "pendiente" },
-        { id: "t3", nombre: "Exportar assets para desarrollo", fechaLimite: mas(5), prioridad: "baja", descripcion: "", estado: "pendiente" },
-        { id: "t4", nombre: "Aprobar paleta de colores", fechaLimite: mas(-3), prioridad: "alta", descripcion: "", estado: "completada" },
-      ],
-    },
-    {
-      id: "p2",
-      nombre: "App móvil",
-      tareas: [
-        { id: "t5", nombre: "Configurar notificaciones push", fechaLimite: mas(2), prioridad: "media", descripcion: "", estado: "pendiente" },
-        { id: "t6", nombre: "Pruebas de login en iOS", fechaLimite: mas(0), prioridad: "alta", descripcion: "Validar flujo completo con cuenta de prueba.", estado: "progreso" },
-      ],
-    },
-  ];
-  return { proyectos, siguienteId: 7 };
+function datosVacios() {
+  return { proyectos: [], siguienteId: 1 };
 }
 
 export function crearEstadoInicial() {
@@ -34,7 +11,7 @@ export function crearEstadoInicial() {
   } catch (e) {
     datos = null;
   }
-  if (!datos || !datos.proyectos) datos = datosSemilla();
+  if (!datos || !datos.proyectos) datos = datosVacios();
 
   return {
     proyectos: datos.proyectos,
