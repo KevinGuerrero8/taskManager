@@ -12,6 +12,7 @@ export function modalProyecto(estadoApp, acciones) {
         el("label", { clase: "campo__etiqueta" }, "Nombre"),
         el("input", {
           clase: "campo__input",
+          "data-foco": "proyecto-nombre",
           value: pm.nombre,
           placeholder: "Ej. Rediseño web",
           onInput: (e) => acciones.cambiarNombreNuevoProyecto(e.target.value),

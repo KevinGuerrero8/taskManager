@@ -46,6 +46,7 @@ function formularioTarea(estadoApp, acciones) {
   return el("div", { clase: "formulario" }, [
     campoTexto("Nombre", borrador.nombre, (v) => acciones.cambiarBorrador({ nombre: v }), {
       placeholder: "Nombre de la tarea",
+      "data-foco": "tarea-nombre",
     }),
     el("div", { clase: "campo" }, [
       el("label", { clase: "campo__etiqueta" }, "Proyecto"),
