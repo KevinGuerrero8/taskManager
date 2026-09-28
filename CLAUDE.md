@@ -35,7 +35,7 @@ js/
                            todos los mutadores de estado (uno por acción de usuario)
   render.js                orquesta el re-render completo de #app en cada acción
   vistas/                  dashboard.js, proyectos.js, proyecto.js (lista+kanban), calendario.js
-  componentes/             barraLateral.js, modalTarea.js (ver/editar/crear), modalProyecto.js
+  componentes/             barraLateral.js (nav + accesos directos a proyectos), modalTarea.js (ver/editar/crear), modalProyecto.js
   main.js                  entry point: conecta acciones (estado + persistir + render)
 ```
 

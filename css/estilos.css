@@ -180,6 +180,79 @@ select:focus {
   background: var(--color-tinta);
 }
 
+/* accesos directos a proyectos: la lista hace scroll propio (min-height: 0)
+   para no empujar "+ Nuevo proyecto" fuera de la barra sticky de 100vh */
+.nav-proyectos {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  margin-top: 28px;
+  margin-bottom: 16px;
+}
+.nav-proyectos__titulo {
+  padding: 0 14px 8px;
+  font-family: var(--fuente-etiquetas);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-tenue);
+}
+.nav-proyectos__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+  min-height: 0;
+}
+.nav-proyecto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: var(--radio-item);
+  font-family: var(--fuente-etiquetas);
+  font-size: 13px;
+  color: var(--color-texto-nav-inactivo);
+  background: transparent;
+  border: none;
+  text-align: left;
+}
+.nav-proyecto:hover {
+  background: var(--color-superficie-1);
+}
+.nav-proyecto--activo,
+.nav-proyecto--activo:hover {
+  background: var(--color-hoy-fondo);
+  color: var(--color-acento);
+}
+.nav-proyecto__punto {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-tenue);
+}
+.nav-proyecto--activo .nav-proyecto__punto {
+  background: var(--color-acento);
+}
+.nav-proyecto__nombre {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.nav-proyecto__conteo {
+  flex: none;
+  font-size: 11px;
+  color: var(--color-texto-secundario);
+}
+.raiz--movil .nav-proyectos {
+  display: none;
+}
+
 .boton-nuevo-proyecto {
   display: flex;
   margin-top: auto;
